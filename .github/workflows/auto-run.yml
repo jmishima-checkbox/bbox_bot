@@ -2,7 +2,7 @@ name: BriskBox Daily Bot
 
 on:
   schedule:
-    - cron: '20 20 * * *'  # Todos los días a las 03:00 UTC = 00:00 GMT-3
+    - cron: '0 3 * * *'  # Todos los días a las 03:00 UTC = 00:00 GMT-3
   workflow_dispatch:  # Para correrlo manualmente
 
 jobs:
