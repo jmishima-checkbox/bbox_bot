@@ -1,0 +1,24 @@
+name: BriskBox Daily Bot
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # Todos los días a las 03:00 UTC = 00:00 GMT-3
+  workflow_dispatch:  # Para correrlo manualmente
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repo
+        uses: actions/checkout@v3
+
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: Instalar dependencias
+        run: pip install requests
+
+      - name: Ejecutar script
+        run: python main.py
