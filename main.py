@@ -22,13 +22,13 @@ lessons = response.json()
 
 # Filtrar clases específicas
 boxLessons = next(x for x in lessons['avalible_clases'] if x["name"] == "Nueva Cordoba")['clases_types']
-activityLessons = next(x for x in boxLessons if x["name"] == "BriskBox X")
+activityLessons = next(x for x in boxLessons if x["name"] == "FUNcional")
 
 # Filtrar clases a las 18:00
 lessonsIds = []
 for lessons in activityLessons['dates']:
     for lesson in lessons['clases']:
-        if lesson['name'].startswith('18:00'):
+        if lesson['name'].startswith('09:00'):
             lesson['date'] = lessons['date']
             lessonsIds.append(lesson)
 
